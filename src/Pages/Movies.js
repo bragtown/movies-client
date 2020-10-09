@@ -3,8 +3,12 @@ import Table from "react-bootstrap/Table";
 import handleResponse from "../Util/responseUtil";
 import * as axios from "axios";
 import {Link} from "react-router-dom";
+import {Button} from "react-bootstrap";
 
 const Movies = () => {
+	const quickSetup = () => {
+		axios.get('/api/movies/setup').then(handleResponse(setMovies));
+	};
 	const [movies, setMovies] = useState(null);
 	if (!movies) {
 		axios.get('/api/movies').then(handleResponse(setMovies))
@@ -32,8 +36,17 @@ const Movies = () => {
 					))}
 					</tbody>
 				</Table>
+				<QuickSetupButton show = {movies === null || movies.length === 0} setup={quickSetup}/>
 			</span>
 	);
+};
+
+const QuickSetupButton = ({show, setup}) => {
+	if (show) {
+		return <Button onClick={() => setup()}>Quick Setup</Button>
+	} else {
+		return '';
+	}
 };
 
 export default Movies
