@@ -9,6 +9,7 @@ import {
   Route
 } from "react-router-dom";
 import Movies from "./Pages/Movies";
+import Movie from "./Pages/Movie";
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
           {/*TODO add movie input component*/}
         </Route>
         <Route path="/movie/:id">
-          {/*TODO add movie view*/}
+          <Movie/>
         </Route>
 
 

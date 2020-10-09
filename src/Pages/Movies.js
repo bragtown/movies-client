@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Table from "react-bootstrap/Table";
 import handleResponse from "../Util/responseUtil";
 import * as axios from "axios";
+import {Link} from "react-router-dom";
 
 const Movies = () => {
 	const [movies, setMovies] = useState(null);
@@ -23,7 +24,7 @@ const Movies = () => {
 					<tbody>
 					{movies && movies.map(movie=> (
 						<tr key={movie.id}>
-							<td>{movie.title}</td>
+							<td><Link to={`/movie/${movie.id}`}>{movie.title}</Link></td>
 							<td>{movie.releaseDate}</td>
 							<td>{movie.plot}</td>
 							<td>Unknown Rating</td>
