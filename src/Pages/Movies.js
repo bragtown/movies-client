@@ -23,10 +23,10 @@ const Movies = () => {
 					<tbody>
 					{movies && movies.map(movie=> (
 						<tr key={movie.id}>
-							<td>movie.title</td>
-							<td>movie.releaseDate</td>
-							<td>movie.plot</td>
-							<td>unkown rating</td>
+							<td>{movie.title}</td>
+							<td>{movie.releaseDate}</td>
+							<td>{movie.plot}</td>
+							<td>Unknown Rating</td>
 						</tr>
 					))}
 					</tbody>
