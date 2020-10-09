@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import Movies from "./Pages/Movies";
 import Movie from "./Pages/Movie";
+import MovieInput from "./Pages/MovieInput";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
           <Movies/>
         </Route>
         <Route path="/new" exact>
-          {/*TODO add movie input component*/}
+          <MovieInput/>
         </Route>
         <Route path="/movie/:id">
           <Movie/>
