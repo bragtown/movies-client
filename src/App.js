@@ -8,6 +8,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import Movies from "./Pages/Movies";
 
 function App() {
   return (
@@ -22,13 +23,13 @@ function App() {
       </Navbar>
       <Switch>
         <Route path="/" exact>
-          {/*add movie component*/}
+          <Movies/>
         </Route>
         <Route path="/new" exact>
-          {/*add movie input component*/}
+          {/*TODO add movie input component*/}
         </Route>
         <Route path="/movie/:id">
-          {/*add movie view*/}
+          {/*TODO add movie view*/}
         </Route>
 
 
